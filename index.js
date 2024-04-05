@@ -168,3 +168,23 @@ async function fetchSearchWeatherInfo(city) {
         //hW
     }
 }
+
+// Assuming you have a button or event that toggles the visibility of parameters
+const toggleParameters = () => {
+    const parameterContainer = document.querySelector('.parameter-container');
+    const wrapper = document.querySelector('.wrapper');
+
+    // Toggle visibility of parameters
+    parameterContainer.classList.toggle('hidden');
+
+    // Toggle dynamic-height class based on parameters visibility
+    if (parameterContainer.classList.contains('hidden')) {
+        wrapper.classList.remove('dynamic-height');
+    } else {
+        wrapper.classList.add('dynamic-height');
+    }
+};
+
+// Example event listener for a button that toggles parameters visibility
+const toggleButton = document.querySelector('.toggle-button');
+toggleButton.addEventListener('click', toggleParameters);
